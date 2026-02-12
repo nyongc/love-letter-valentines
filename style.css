@@ -1,0 +1,132 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container, .letter-container {
+  background: rgba(255,255,255,0.95);
+  padding: 25px;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input {
+  padding: 8px;
+  width: 80%;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.images img {
+  width: 80px;
+  margin: 5px;
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+/* Confetti canvas */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* A-B top, C-D bottom */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.option {
+  background: #fff0f3;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  border-color: #ff4d6d;
+  transform: scale(1.03);
+}
+
+.option input {
+  display: none;
+}
+
+.letter {
+  font-weight: bold;
+  color: #ff4d6d;
+}
+
+.option input:checked + .letter,
+.option input:checked ~ .text {
+  color: #ff4d6d;
+  font-weight: bold;
+}
+
+/* LETTER SIDE-BY-SIDE LAYOUT */
+/* ===== LETTER PAGE SIDE-BY-SIDE FIX ===== */
+
+/* ===== LETTER PAGE SIDE-BY-SIDE IMPROVED ===== */
+
+.letter-layout {
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  text-align: left;
+}
+
+/* Stretch message more */
+.letter-text {
+  flex: 1.7;   /* mas malapad kaysa images */
+}
+
+/* Images slightly smaller side but bigger pictures */
+.letter-images {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+/* Bigger images */
+.letter-images img {
+  width: 130%;
+  height: 170px;   /* bigger */
+  object-fit: cover;
+  border-radius: 10px;
+}
