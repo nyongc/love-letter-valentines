@@ -7,18 +7,32 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+
+  background: url("images/bg.jpg") repeat; /* repeat the image */
+  background-size: 400px 400px; /* size of each mini square */
+
   height: 100vh;
+  margin: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  color: #333;
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+
+  text-shadow:
+    0 0 8px rgba(218, 7, 7, 0.9),
+    0 0 18px rgba(224, 13, 13, 0.7),
+    0 0 30px rgba(229, 9, 9, 0.5);
 }
 
 /* MAIN CONTAINER */
 .container, .letter-container {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.75);
   padding: 25px;
   border-radius: 15px;
   width: 95%;
