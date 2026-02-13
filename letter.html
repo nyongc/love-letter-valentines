@@ -15,18 +15,23 @@
   <!-- Letter Content -->
   <div class="letter-container letter-layout">
 
-    <!-- LEFT SIDE: MESSAGE -->
+    <!-- LEFT SIDE: VIDEO -->
+    <div class="letter-video">
+      <video autoplay muted loop playsinline class="love-video">
+        <source src="images/ae566323-31f1-4d47-a5ea-c6ccc471633e.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- CENTER: LETTER -->
     <div class="letter-text">
       <h1>💖 To My Love 💖</h1>
-
       <p>
         Hi Misis ko, <br><br>
-        You made it here! <br><br>
-        I just want to say how much you mean to me. You light up my life and make every moment special. 🌹<br><br>
-        Thank you for being mine, for all the laughs, hugs, and sweet memories. You’re my heart and soul. ❤️<br><br>
-        I hope this little surprise made you smile! 💖
+        You made it here! Misis ko<br><br>
+        I just want to say i love you so much and how much i'm always wanting to create a life with you, where we'll get married have kids of our own🌹<br><br>
+        I'll always do my best to love you and understand you, Thank you for making my life colorful in many ways i'm so glad that i chose you and i'll always keep choosing you ❤️<br><br>
+        My wife, My Honey, my Lovelove, can't wait to create life with you together, take care of yourself always Baby, i'll just be here and soonest i'll give you cuddles all you can want buffet hehe
       </p>
-
       <p>
         Always and forever, <br>
         <strong>Your Name 💕</strong>
@@ -53,30 +58,35 @@
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const hearts = Array.from({length:150},()=>({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height,
-      size:Math.random()*10+5,
-      speed:Math.random()*2+1,
-      angle:Math.random()*Math.PI*2
+    const hearts = Array.from({length:150}, () => ({
+      x: Math.random()*canvas.width,
+      y: Math.random()*canvas.height,
+      size: Math.random()*10 + 5,
+      speed: Math.random()*2 + 1,
+      angle: Math.random()*Math.PI*2
     }));
 
     function draw(){
       ctx.clearRect(0,0,canvas.width,canvas.height);
-      hearts.forEach(h=>{
+      hearts.forEach(h => {
         ctx.beginPath();
-        ctx.fillStyle="pink";
-        ctx.arc(h.x,h.y,h.size,0,Math.PI*2);
+        ctx.fillStyle = "pink";
+        ctx.arc(h.x, h.y, h.size, 0, Math.PI*2);
         ctx.fill();
-        h.y-=h.speed;
-        h.x+=Math.sin(h.angle)*2;
-        h.angle+=0.01;
-        if(h.y<0)h.y=canvas.height;
-        if(h.x>canvas.width)h.x=0;
+        h.y -= h.speed;
+        h.x += Math.sin(h.angle) * 2;
+        h.angle += 0.01;
+        if(h.y < 0) h.y = canvas.height;
+        if(h.x > canvas.width) h.x = 0;
       });
       requestAnimationFrame(draw);
     }
     draw();
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 
 </body>
